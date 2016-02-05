@@ -141,7 +141,7 @@ def encrypt(plaintext, key):
     textf = textl
 
     ## put X between the pairs and check recursively
-    for i in range(0, len(textl) , 2):
+    for i in range(0, len(textl) - 1  , 2):
         if (textl[i] == textl[i + 1]):
            
             textf.insert(i + 1, 'X');
@@ -298,7 +298,7 @@ def countChar(text):
     alphaList = [allChars[i: i + 1] for i in range(0, len(allChars), 1)]  # it will make the pairs
     charFreq = alphaList
 
-    for index in range (0, len(alphaList)):
+    for index in range (0, len(alphaList) - 1):
         charFreq[index] = text.count(alphaList[index])
 
 
@@ -309,7 +309,7 @@ def printCountedChar(text):
 
 
     charFreq = countChar(text)
-    for i in range(0, 26):
+    for i in range(0, 25):
         out = chr(ord('A') + i)
         
         
