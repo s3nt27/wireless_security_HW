@@ -130,7 +130,7 @@ def encrypt(plaintext, key):
     textl = [plaintext[i: i + 1] for i in range(0, len(plaintext), 1)]  # it will make the pairs
     
 
-    print 'before inserting X'
+    print 'plain text before inserting X'
     print textL
     
     print '\n\nGenerating actual plain text\n\n'
@@ -141,7 +141,7 @@ def encrypt(plaintext, key):
     textf = textl
 
     ## put X between the pairs and check recursively
-    for i in range(0, len(textl) - 1, 2):
+    for i in range(0, len(textl) , 2):
         if (textl[i] == textl[i + 1]):
            
             textf.insert(i + 1, 'X');
@@ -167,7 +167,7 @@ def encrypt(plaintext, key):
     textl = [plaintext[i: i + 1] for i in range(0, len(plaintext), 1)]  # it will make the ones
 
 
-    print 'After inserting X'
+    print 'Plain text After inserting X'
     print textL
     #print textL
     
@@ -191,7 +191,7 @@ def encrypt(plaintext, key):
 
     
     ## encyption logic
-    for i in range (0, len(textl) - 1, 2):
+    for i in range (0, len(textl) , 2):
         r1, c1 = np.where(key5 == textl[i])
         r2, c2 = np.where(key5 == textl[i + 1])
         
@@ -250,7 +250,7 @@ def decrypt(ciphertext, key):
 
     key = key5.tolist()
     ## decyption logic
-    for i in range (0, len(textl) - 1, 2):
+    for i in range (0, len(textl) , 2):
         r1, c1 = np.where(key5 == textl[i])
         r2, c2 = np.where(key5 == textl[i + 1])
         
@@ -298,7 +298,7 @@ def countChar(text):
     alphaList = [allChars[i: i + 1] for i in range(0, len(allChars), 1)]  # it will make the pairs
     charFreq = alphaList
 
-    for index in range (0, len(alphaList) - 1):
+    for index in range (0, len(alphaList)):
         charFreq[index] = text.count(alphaList[index])
 
 
@@ -309,7 +309,7 @@ def printCountedChar(text):
 
 
     charFreq = countChar(text)
-    for i in range(0, 25):
+    for i in range(0, 26):
         out = chr(ord('A') + i)
         
         
