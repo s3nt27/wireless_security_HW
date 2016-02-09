@@ -1,15 +1,16 @@
 """
-Filename: hw1.1.v1.4.1.py
+Filename: hw1.1.v1.5.1.py
 Description: This file generates key matrix,
 encrypts the plaintext and decrypts the cipher text with the keyword
 
 
 Author: Subharthi Banerjee
-Ver. : 1.4.2
+Ver. : 1.5.1
 version information:
 Key matrix generates fine
 encryption works
 decryption works
+Removes  number from key and plaintext
 
 Dated: 02052016
 
@@ -31,7 +32,7 @@ def keyPreProcess(key):
     key = key.replace(" ", "")
     key = key.upper();  #change the key to uppercase
 
-
+    key = ''.join([i for i in key if not i.isdigit()])
     keyArray = list(key);  # making the key as array
     # check if j & i both exists
 
