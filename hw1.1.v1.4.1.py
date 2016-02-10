@@ -1,16 +1,15 @@
 """
-Filename: hw1.1.v1.5.1.py
+Filename: hw1.1.v1.4.1.py
 Description: This file generates key matrix,
 encrypts the plaintext and decrypts the cipher text with the keyword
 
 
 Author: Subharthi Banerjee
-Ver. : 1.5.1
+Ver. : 1.4.2
 version information:
 Key matrix generates fine
 encryption works
 decryption works
-Removes  number from key and plaintext
 
 Dated: 02052016
 
@@ -299,7 +298,7 @@ def countChar(text):
     alphaList = [allChars[i: i + 1] for i in range(0, len(allChars), 1)]  # it will make the pairs
     charFreq = alphaList
 
-    for index in range (0, len(alphaList) - 1):
+    for index in range (0, len(alphaList)):
         charFreq[index] = text.count(alphaList[index])
 
 
@@ -310,7 +309,7 @@ def printCountedChar(text):
 
 
     charFreq = countChar(text)
-    for i in range(0, 25):
+    for i in range(0, 26):
         out = chr(ord('A') + i)
         
         
